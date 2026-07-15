@@ -1,0 +1,42 @@
+name: Update Profile Music Card
+
+on:
+  workflow_dispatch:
+    inputs:
+      song_name:
+        description: '歌名'
+        required: true
+        default: '三生三幸'
+      lyrics:
+        description: '歌词'
+        required: true
+        default: '我希望花开是你  叶落是你 白首不相离'
+      time_str:
+        description: '播放时间 (e.g. 02:18 / 03:45)'
+        required: true
+        default: '02:18 / 03:45'
+
+jobs:
+  update-svgs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run update script
+        run: |
+          python static/update_music.py "${{ github.event.inputs.song_name }}" "${{ github.event.inputs.lyrics }}" "${{ github.event.inputs.time_str }}"
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/music-dark.svg static/music-light.svg
+          git diff-index --quiet HEAD || (git commit --amend --no-edit && git push --force)

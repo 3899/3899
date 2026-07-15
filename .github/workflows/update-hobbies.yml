@@ -1,0 +1,62 @@
+name: Update Profile Hobby Cards
+
+on:
+  workflow_dispatch:
+    inputs:
+      hobby_index:
+        description: '选择修改哪个卡片 (1 或 2)'
+        required: true
+        default: '1'
+        type: choice
+        options:
+          - '1'
+          - '2'
+      title:
+        description: '分类名称 (如 Smart Home Automation / Bambu 3D Printing)'
+        required: true
+        default: 'Smart Home Automation'
+      bold_highlight:
+        description: '卡片标题 (如 Home Assistant • MIJIA 自动化中枢)'
+        required: true
+        default: 'Home Assistant • MIJIA 自动化中枢'
+      status_text:
+        description: '底部状态文字 (如 Home Assistant 正常运行 • 节点已组网)'
+        required: true
+        default: 'Home Assistant 正常运行 • 节点已组网'
+      color_theme:
+        description: '指示灯配色主题'
+        required: true
+        default: 'blue'
+        type: choice
+        options:
+          - 'blue'
+          - 'green'
+          - 'red'
+          - 'orange'
+          - 'purple'
+          - 'yellow'
+
+jobs:
+  update-svgs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run update script
+        run: |
+          python static/update_hobbies.py "${{ github.event.inputs.hobby_index }}" "${{ github.event.inputs.title }}" "${{ github.event.inputs.bold_highlight }}" "${{ github.event.inputs.status_text }}" "${{ github.event.inputs.color_theme }}"
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/hobby-${{ github.event.inputs.hobby_index }}-dark.svg static/hobby-${{ github.event.inputs.hobby_index }}-light.svg
+          git diff-index --quiet HEAD || (git commit --amend --no-edit && git push --force)

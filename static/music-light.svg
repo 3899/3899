@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 120" fill="none" width="495" height="120">
+  <style>
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { height: 8px; y: 57px; }
+      50% { height: 32px; y: 33px; }
+    }
+    .player-bg {
+      stroke: rgba(0, 0, 0, 0.08);
+      stroke-width: 1px;
+      rx: 8px;
+      fill: none;
+    }
+    .cd-disk {
+      animation: spin 8s linear infinite;
+      transform-origin: 55px 60px;
+    }
+    .eq-bar {
+      animation: pulse 1s ease-in-out infinite;
+      fill: #0366d6;
+    }
+    .eq-1 { animation-delay: 0.2s; animation-duration: 0.8s; }
+    .eq-2 { animation-delay: 0.4s; animation-duration: 1.2s; }
+    .eq-3 { animation-delay: 0.1s; animation-duration: 0.9s; }
+    .eq-4 { animation-delay: 0.5s; animation-duration: 1.1s; }
+    
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      fill: #24292e;
+    }
+    .lyric-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 11.5px;
+      font-style: italic;
+      fill: #586069;
+    }
+    .time-text {
+      font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 10px;
+      fill: #959da5;
+    }
+    .progress-bg {
+      fill: #e1e4e8;
+    }
+    .progress-bar {
+      fill: #0366d6;
+    }
+    .control-btn {
+      fill: #24292e;
+      stroke: #24292e;
+      cursor: pointer;
+    }
+    .control-btn:hover {
+      fill: #0366d6;
+      stroke: #0366d6;
+    }
+    .cd-outline { stroke: #e1e4e6; }
+    .cd-groove { stroke: #21262d; }
+  </style>
+
+  <!-- Player Outer Border -->
+  <rect x="0.5" y="0.5" width="494" height="119" class="player-bg" />
+
+  <!-- CD Disk Group (Left) -->
+  <g transform="translate(10, 0)">
+    <!-- Outer CD Body -->
+    <circle cx="55" cy="60" r="35" fill="#090d16" stroke-width="2" class="cd-outline" />
+    <g class="cd-disk">
+      <!-- Vinyl Grooves -->
+      <circle cx="55" cy="60" r="30" fill="none" stroke-width="0.8" class="cd-groove" stroke-dasharray="6,4" />
+      <circle cx="55" cy="60" r="26" fill="none" stroke-width="0.8" class="cd-groove" />
+      <circle cx="55" cy="60" r="21" fill="none" stroke-width="0.8" class="cd-groove" stroke-dasharray="10,5" />
+      <circle cx="55" cy="60" r="16" fill="none" stroke-width="0.8" class="cd-groove" />
+      <!-- NetEase Red Center Label -->
+      <circle cx="55" cy="60" r="10" fill="#e60026" />
+      <circle cx="55" cy="60" r="3" fill="#090d16" />
+    </g>
+    <!-- Stylus / Needle -->
+    <circle cx="88" cy="27" r="2.5" fill="#586069" />
+    <path d="M88 27 L74 40 L69 52" stroke="#586069" stroke-width="1.5" stroke-linecap="round" fill="none" />
+    <rect x="66" y="50" width="4" height="6" transform="rotate(-25 68 53)" fill="#586069" />
+  </g>
+
+  <!-- Track Information (Center) -->
+  <g transform="translate(120, 0)">
+    <text x="0" y="29" class="title-text">三生三幸</text>
+    <text x="0" y="48" class="lyric-text">我希望花开是你  叶落是你 白首不相离</text>
+    
+    <!-- Progress Bar -->
+    <rect x="0" y="62" width="220" height="3.5" rx="1.75" class="progress-bg" />
+    <rect x="0" y="62" width="135" height="3.5" rx="1.75" class="progress-bar" />
+    <text x="230" y="66" class="time-text">02:18 / 03:45</text>
+
+    <!-- Playback Controls -->
+    <g transform="translate(0, 80)">
+      <!-- Previous Button -->
+      <g class="control-btn">
+        <path d="M64 4 L64 14" stroke-width="2" stroke-linecap="round" />
+        <path d="M76 4 L66 9 L76 14 Z" />
+      </g>
+      <!-- Play/Pause Button -->
+      <g class="control-btn">
+        <rect x="105" y="4" width="3" height="10" rx="1" />
+        <rect x="112" y="4" width="3" height="10" rx="1" />
+      </g>
+      <!-- Next Button -->
+      <g class="control-btn">
+        <path d="M144 4 L154 9 L144 14 Z" />
+        <path d="M156 4 L156 14" stroke-width="2" stroke-linecap="round" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Music Equalizer Animation (Right) -->
+  <g transform="translate(445, 15)">
+    <rect x="0" width="3.5" rx="1.75" class="eq-bar eq-1" />
+    <rect x="7" width="3.5" rx="1.75" class="eq-bar eq-2" />
+    <rect x="14" width="3.5" rx="1.75" class="eq-bar eq-3" />
+    <rect x="21" width="3.5" rx="1.75" class="eq-bar eq-4" />
+  </g>
+</svg>

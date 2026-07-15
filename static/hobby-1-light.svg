@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282 126" fill="none" width="282" height="126">
+  <style>
+    .item-bg {
+      stroke: rgba(0, 0, 0, 0.08);
+      stroke-width: 1px;
+      rx: 6px;
+      fill: none;
+    }
+    .gray-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      fill: #586069;
+    }
+    .bold-highlight {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 12.5px;
+      font-weight: bold;
+      fill: #24292e;
+    }
+    .status-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 10.5px;
+      fill: #0366d6;
+    }
+    .dot-color { fill: #0366d6; filter: drop-shadow(0 0 3px #0366d6); }
+    @keyframes blink {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
+    }
+    .dot {
+      animation: blink 2s infinite linear;
+    }
+  </style>
+  
+  <rect x="0.5" y="0.5" width="281" height="125" class="item-bg" />
+  <text x="14" y="24" class="gray-text">Smart Home Automation</text>
+  <text x="14" y="56" class="bold-highlight">Home Assistant • MIJIA 自动化中枢</text>
+  <circle cx="19" cy="94" r="4.5" class="dot dot-color" />
+  <text x="29" y="97.5" class="status-text">Home Assistant 正常运行 • 节点已组网</text>
+</svg>
