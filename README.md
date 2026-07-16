@@ -106,6 +106,16 @@
   </picture>
 </p>
 
+### 🎬 影视
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./static/media-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./static/media-light.svg">
+    <img src="./static/media-light.svg" alt="Media Player" />
+  </picture>
+</p>
+
 ---
 
 ### 💻 个人实验室

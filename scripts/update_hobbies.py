@@ -96,8 +96,9 @@ if __name__ == "__main__":
         light_color = color_input
         
     dir_path = os.path.dirname(os.path.abspath(__file__))
-    dark_file = os.path.join(dir_path, f"hobby-{idx}-dark.svg")
-    light_file = os.path.join(dir_path, f"hobby-{idx}-light.svg")
+    static_path = os.path.abspath(os.path.join(dir_path, "..", "static"))
+    dark_file = os.path.join(static_path, f"hobby-{idx}-dark.svg")
+    light_file = os.path.join(static_path, f"hobby-{idx}-light.svg")
     
     success_dark = update_hobby_svg(dark_file, title, highlight, status, dark_color)
     success_light = update_hobby_svg(light_file, title, highlight, status, light_color)

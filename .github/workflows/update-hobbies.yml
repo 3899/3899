@@ -52,7 +52,7 @@ jobs:
 
       - name: Run update script
         run: |
-          python static/update_hobbies.py "${{ github.event.inputs.hobby_index }}" "${{ github.event.inputs.title }}" "${{ github.event.inputs.bold_highlight }}" "${{ github.event.inputs.status_text }}" "${{ github.event.inputs.color_theme }}"
+          python scripts/update_hobbies.py "${{ github.event.inputs.hobby_index }}" "${{ github.event.inputs.title }}" "${{ github.event.inputs.bold_highlight }}" "${{ github.event.inputs.status_text }}" "${{ github.event.inputs.color_theme }}"
 
       - name: Commit and Push changes
         run: |

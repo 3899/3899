@@ -53,8 +53,9 @@ if __name__ == "__main__":
     
     # Paths to the SVGs
     dir_path = os.path.dirname(os.path.abspath(__file__))
-    dark_path = os.path.join(dir_path, 'music-dark.svg')
-    light_path = os.path.join(dir_path, 'music-light.svg')
+    static_path = os.path.abspath(os.path.join(dir_path, "..", "static"))
+    dark_path = os.path.join(static_path, 'music-dark.svg')
+    light_path = os.path.join(static_path, 'music-light.svg')
     
     success_dark = update_music_svg(dark_path, new_title, new_lyric, new_time)
     success_light = update_music_svg(light_path, new_title, new_lyric, new_time)

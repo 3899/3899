@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282 126" fill="none" width="282" height="126">
   <style>
     .item-bg {
-      stroke: rgba(255, 255, 255, 0.15);
+      stroke: #e4e2e2;
       stroke-width: 1px;
       rx: 6px;
       fill: none;

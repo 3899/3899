@@ -1,20 +1,20 @@
-name: Update Profile Music Card
+name: Update Profile Media Card
 
 on:
   workflow_dispatch:
     inputs:
-      song_name:
-        description: '歌名'
+      movie_name:
+        description: '电影/电视剧名称'
         required: true
-        default: '三生三幸'
-      lyrics:
-        description: '歌词'
-        required: true
-        default: '我希望花开是你  叶落是你 白首不相离'
+        default: '大话西游'
       time_str:
-        description: '播放时间 (e.g. 02:18 / 03:45)'
+        description: '播放时间或推荐评分 (e.g. 01:38:42 / 01:54:12)'
         required: true
-        default: '02:18 / 03:45'
+        default: '01:38:42 / 01:54:12'
+      footer_text:
+        description: '偏好内容'
+        required: true
+        default: '偏好: 武侠 • 仙侠 • 古装 • 爱情 • 校园  |  追番: 凡人修仙传 • 剑来'
 
 jobs:
   update-svgs:
@@ -32,11 +32,11 @@ jobs:
 
       - name: Run update script
         run: |
-          python scripts/update_music.py "${{ github.event.inputs.song_name }}" "${{ github.event.inputs.lyrics }}" "${{ github.event.inputs.time_str }}"
+          python scripts/update_media.py "${{ github.event.inputs.movie_name }}" "${{ github.event.inputs.time_str }}" "${{ github.event.inputs.footer_text }}"
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add static/music-dark.svg static/music-light.svg
+          git add static/media-dark.svg static/media-light.svg
           git diff-index --quiet HEAD || (git commit --amend --no-edit && git push --force)
