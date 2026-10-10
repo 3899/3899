@@ -59,8 +59,7 @@
       fill: #0366d6;
       stroke: #0366d6;
     }
-    .cd-outline { stroke: #e1e4e6; }
-    .cd-groove { stroke: #21262d; }
+    .cd-groove { stroke: #5c667a; }
   </style>
 
   <!-- Player Outer Border -->
@@ -68,22 +67,22 @@
 
   <!-- CD Disk Group (Left) -->
   <g transform="translate(10, 0)">
-    <!-- Outer CD Body -->
-    <circle cx="55" cy="60" r="35" fill="#090d16" stroke-width="2" class="cd-outline" />
+    <!-- Outer CD Body (纯黑胶盘体，无外圈浅色粗边框) -->
+    <circle cx="55" cy="60" r="35" fill="#181f2a" />
     <g class="cd-disk">
       <!-- Vinyl Grooves -->
-      <circle cx="55" cy="60" r="30" fill="none" stroke-width="0.8" class="cd-groove" stroke-dasharray="6,4" />
-      <circle cx="55" cy="60" r="26" fill="none" stroke-width="0.8" class="cd-groove" />
-      <circle cx="55" cy="60" r="21" fill="none" stroke-width="0.8" class="cd-groove" stroke-dasharray="10,5" />
-      <circle cx="55" cy="60" r="16" fill="none" stroke-width="0.8" class="cd-groove" />
+      <circle cx="55" cy="60" r="30" fill="none" stroke-width="0.9" class="cd-groove" stroke-dasharray="6,4" />
+      <circle cx="55" cy="60" r="26" fill="none" stroke-width="0.9" class="cd-groove" />
+      <circle cx="55" cy="60" r="21" fill="none" stroke-width="0.9" class="cd-groove" stroke-dasharray="10,5" />
+      <circle cx="55" cy="60" r="16" fill="none" stroke-width="0.9" class="cd-groove" />
       <!-- NetEase Red Center Label -->
       <circle cx="55" cy="60" r="10" fill="#e60026" />
       <circle cx="55" cy="60" r="3" fill="#090d16" />
     </g>
     <!-- Stylus / Needle -->
-    <circle cx="88" cy="27" r="2.5" fill="#586069" />
-    <path d="M88 27 L74 40 L69 52" stroke="#586069" stroke-width="1.5" stroke-linecap="round" fill="none" />
-    <rect x="66" y="50" width="4" height="6" transform="rotate(-25 68 53)" fill="#586069" />
+    <circle cx="88" cy="27" r="2.5" fill="#6e7781" />
+    <path d="M88 27 L74 40 L69 52" stroke="#6e7781" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    <rect x="66" y="50" width="4" height="6" transform="rotate(-25 68 53)" fill="#6e7781" />
   </g>
 
   <!-- Track Information (Center) -->

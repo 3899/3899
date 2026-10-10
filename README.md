@@ -44,6 +44,13 @@
       <img alt="EcoPaste-Pro" src="https://ztxdiy.vercel.app/api/pin?username=3899&repo=EcoPaste-Pro&theme=transparent&title_color=0366d6&text_color=000000&icon_color=586069&hide_border=false&locale=cn&description_lines_count=3" width="48%" />
     </picture>
   </a>
+  <a href="https://github.com/3899/SimAdminHub">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://ztxdiy.vercel.app/api/pin?username=3899&repo=SimAdminHub&theme=transparent&title_color=00BFFF&text_color=e6edf3&icon_color=8b949e&hide_border=false&locale=cn&description_lines_count=3">
+      <source media="(prefers-color-scheme: light)" srcset="https://ztxdiy.vercel.app/api/pin?username=3899&repo=SimAdminHub&theme=transparent&title_color=0366d6&text_color=000000&icon_color=586069&hide_border=false&locale=cn&description_lines_count=3">
+      <img alt="SimAdminHub" src="https://ztxdiy.vercel.app/api/pin?username=3899&repo=SimAdminHub&theme=transparent&title_color=0366d6&text_color=000000&icon_color=586069&hide_border=false&locale=cn&description_lines_count=3" width="48%" />
+    </picture>
+  </a>
 </p>
 
 ---
